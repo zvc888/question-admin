@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.question.admin.mapper.sysmgr.NoticeMapper">
+
+    <insert id="saveReadRecord">
+        insert ignore into t_notice_read(noticeId, userId, createTime) values(#{noticeId}, #{userId}, now())
+    </insert>
+    <select id="listReadUsers" resultType="com.question.admin.domain.entity.sysmgr.User">
+        select u.* from
+        t_notice_read r inner join sys_user u
+        on u.id = r.userId
+        where
+        r.noticeId = #{noticeId}
+        order by r.createTime desc
+    </select>
+    <select id="countUnread" resultType="int">
+        select count(1) from t_notice t left join t_notice_read r on r.noticeId = t.id and r.userId = #{userId} where t.status = 1 and r.userId is null
+    </select>
+
+    <select id="selectPage1" resultType="com.question.admin.domain.vo.manager.sysmgr.NoticeReadVO">
+        select t.*,r.createTime readTime,
+        if(r.createTime is null, 0, 1) isRead,r.userId
+        from t_notice t left join
+        t_notice_read r on r.noticeId = t.id and r.userId = #{notice.userId}
+        <include refid="whereNotice"/>
+
+    </select>
+    <sql id="whereNotice">
+        <where>
+            t.status = 1
+            <if test="notice.title != null and notice.title != ''">
+                and t.title like concat('%', #{notice.title}, '%')
+            </if>
+
+            <if test="notice.beginTime != null and notice.beginTime != ''">
+                and t.modified_time &gt;= #{notice.beginTime}
+            </if>
+
+            <if test="notice.endTime != null and notice.endTime != ''">
+                and DATE(t.modified_time) &lt;= #{notice.endTime}
+            </if>
+            <if test="notice.isRead != null and notice.isRead != ''">
+                <if test="notice.isRead == 0">
+                    and r.created_time is null
+                </if>
+                <if test="notice.isRead == 1">
+                    and r.created_time is not null
+                </if>
+            </if>
+        </where>
+    </sql>
+</mapper>

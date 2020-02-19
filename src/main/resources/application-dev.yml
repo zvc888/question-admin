@@ -1,0 +1,71 @@
+project:
+  domain: http://localhost:9430
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      trigger-file: .reloadtrigger
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/question_admin?useSSL=false&allowMultiQueries=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 1234
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        min-idle: 10
+        max-idle: 50
+        max-active: 200
+        max-wait: 3000
+#  data:
+#    mongodb:
+#      host: localhost
+#      port: 27017
+#      database: question_admin_log
+  mail:
+    host: smtp.163.com
+    mailFrom: abcd@163.com
+    username: abcd
+    password: abcd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 25000
+
+mybatis-plus:
+  configuration:
+    #日志打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+file:
+  multipart:
+    #文件上传
+    autoSaveEnabled: true
+    baseDir: D:/upload/
+# 备份
+dbbackup:
+  servername: 127.0.0.1
+  dbname: question_admin
+  username: root
+  password: 1234
+  installPath: ${file.upload:D:/Development/mysql-8.0.13-winx64}
+  backupPath: ${file.export:D:/Backup}
