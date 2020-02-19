@@ -53,7 +53,8 @@
 2. 启动mysql
 3. 运行AdminApplication类
 
+![demo](./doc/1.png)
 
 # 喜欢的帮忙star，谢谢啦
 
-![打赏](https://github.com/zvc888/question-admin/blob/master/doc/dashang.png)
+![打赏](./doc/dashang.png)
