@@ -53,8 +53,8 @@
 2. 启动mysql
 3. 运行AdminApplication类
 
-![demo](https://imgchr.com/i/3VMVDf)
+![demo](https://s2.ax1x.com/2020/02/19/3VMVDf.png)
 
 # 喜欢的帮忙star，谢谢啦
 
-![打赏](https://imgchr.com/i/3VMnUg)
+![打赏](https://s2.ax1x.com/2020/02/19/3VMnUg.md.png)
