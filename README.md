@@ -57,4 +57,4 @@
 
 # 喜欢的帮忙star，谢谢啦
 
-![打赏](https://s2.ax1x.com/2020/02/19/3VMnUg.md.png =450*450)
+<img src="https://s2.ax1x.com/2020/02/19/3VMnUg.md.png" alt="打赏" width="450" height="450" align="center" />
