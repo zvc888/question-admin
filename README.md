@@ -1,4 +1,6 @@
 # question-admin 刷题管理平台
+[gitee地址](https://gitee.com/zvc888/question-admin.git)
+
 1. [JAVA接口服务](https://github.com/zvc888/question-admin.git)
 2. [后端管理页面](https://github.com/zvc888/question-admin-console.git)
 3. [小程序](https://github.com/zvc888/question-wx.git)
