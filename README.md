@@ -54,4 +54,6 @@
 3. 运行AdminApplication类
 
 
+# 喜欢的帮忙star，谢谢啦
 
+![打赏](https://github.com/zvc888/question-admin/blob/master/doc/dashang.png)
