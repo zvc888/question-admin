@@ -1,3 +1,6 @@
+project:
+  domain: http://localhost:9430
+
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -35,6 +38,7 @@ spring:
 #      database: question_admin_log
   mail:
     host: smtp.163.com
+    mailFrom: abcd@163.com
     username: aaaa@163.com
     password: 111111
     properties:
