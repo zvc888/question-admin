@@ -58,8 +58,11 @@
 2. 启动mysql
 3. 运行AdminApplication类
 
-![demo](https://s2.ax1x.com/2020/02/19/3VMVDf.png)
+
+![demo](https://images.gitee.com/uploads/images/2020/0224/154238_f4b6c3b9_87856.png)
+
+![小程序](https://images.gitee.com/uploads/images/2020/0224/154235_160225d6_87856.png)
 
 # 喜欢的帮忙star，谢谢啦
 
-<img src="https://s2.ax1x.com/2020/02/19/3VGcZt.png" alt="打赏" align="center" />
+![打赏](https://images.gitee.com/uploads/images/2020/0224/154238_69516fad_87856.png)
